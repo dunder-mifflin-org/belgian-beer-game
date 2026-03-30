@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Find your perfect Belgian beer based on your taste preferences">
+  <title>🍺 Belgian Beer Recommender</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <main>
+      <!-- Age Verification -->
+      <section id="age-gate">
+        <span class="age-emoji" aria-hidden="true">🍺</span>
+        <h1>Belgian Beer Recommender</h1>
+        <p>Are you of legal drinking age?</p>
+        <div class="age-buttons">
+          <button id="age-yes" class="age-btn-yes">Yes, I'm of age</button>
+          <button id="age-no" class="age-btn-no">No</button>
+        </div>
+      </section>
+
+      <!-- Quiz -->
+      <section id="quiz" class="hidden">
+        <div class="progress-bar">
+          <div class="progress-fill"></div>
+        </div>
+
+        <div class="quiz-step" data-step="1">
+          <h2>What's your mood right now?</h2>
+          <div class="answers">
+            <button class="answer-btn" data-value="0">Relaxed &amp; chill</button>
+            <button class="answer-btn" data-value="1">Adventurous</button>
+            <button class="answer-btn" data-value="2">Celebrating</button>
+            <button class="answer-btn" data-value="3">Need comfort</button>
+          </div>
+        </div>
+
+        <div class="quiz-step" data-step="2">
+          <h2>How do you feel about bitter flavors?</h2>
+          <div class="answers">
+            <button class="answer-btn" data-value="0">Love it</button>
+            <button class="answer-btn" data-value="1">It's okay</button>
+            <button class="answer-btn" data-value="2">Prefer mild</button>
+            <button class="answer-btn" data-value="3">Not for me</button>
+          </div>
+        </div>
+
+        <div class="quiz-step" data-step="3">
+          <h2>Pick your ideal dessert:</h2>
+          <div class="answers">
+            <button class="answer-btn" data-value="0">Dark chocolate</button>
+            <button class="answer-btn" data-value="1">Fruit tart</button>
+            <button class="answer-btn" data-value="2">Caramel pudding</button>
+            <button class="answer-btn" data-value="3">Nothing, I'm savory</button>
+          </div>
+        </div>
+
+        <div class="quiz-step" data-step="4">
+          <h2>How strong do you like your drinks?</h2>
+          <div class="answers">
+            <button class="answer-btn" data-value="0">Light &amp; easy</button>
+            <button class="answer-btn" data-value="1">Medium &amp; balanced</button>
+            <button class="answer-btn" data-value="2">Strong &amp; bold</button>
+            <button class="answer-btn" data-value="3">Knock me out</button>
+          </div>
+        </div>
+
+        <div class="quiz-step" data-step="5">
+          <h2>Which flavor world appeals most?</h2>
+          <div class="answers">
+            <button class="answer-btn" data-value="0">Spicy &amp; herbal</button>
+            <button class="answer-btn" data-value="1">Fruity &amp; citrusy</button>
+            <button class="answer-btn" data-value="2">Malty &amp; toasty</button>
+            <button class="answer-btn" data-value="3">Sour &amp; funky</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Results -->
+      <section id="results" class="hidden">
+        <h2>Your Perfect Belgian Beers 🍻</h2>
+        <p>Based on your taste profile, we think you'll love these:</p>
+        <div id="beer-cards"></div>
+        <button id="restart" class="restart-btn">Take Quiz Again</button>
+      </section>
+
+      <!-- Underage Message -->
+      <section id="underage" class="hidden">
+        <span class="underage-emoji" aria-hidden="true">🚫</span>
+        <h2>Sorry, you must be of legal drinking age.</h2>
+        <p>Come back when you're old enough to enjoy Belgium's finest!</p>
+      </section>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
