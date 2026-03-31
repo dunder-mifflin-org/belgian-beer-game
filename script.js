@@ -273,7 +273,6 @@ const SCORING = [
 
 document.addEventListener("DOMContentLoaded", () => {
   let currentStep = 1;
-  const totalSteps = 5;
   const userAnswers = [];
 
   // DOM references
@@ -285,8 +284,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const underage = document.getElementById("underage");
   const beerCards = document.getElementById("beer-cards");
   const restartBtn = document.getElementById("restart");
+  const progressBar = document.querySelector(".progress-bar");
   const progressFill = document.querySelector(".progress-fill");
   const quizSteps = document.querySelectorAll(".quiz-step");
+  const totalSteps = quizSteps.length;
+  progressBar.setAttribute("aria-valuemax", totalSteps);
 
   // --- Age Gate ---
   ageYes.addEventListener("click", () => {
@@ -345,6 +347,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function updateProgress() {
     progressFill.style.width = (currentStep / totalSteps) * 100 + "%";
+    progressBar.setAttribute("aria-valuenow", currentStep);
   }
 
   // --- Scoring Algorithm ---
